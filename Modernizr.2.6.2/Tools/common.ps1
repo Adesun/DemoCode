@@ -16,7 +16,7 @@ function AddOrUpdate-Reference($scriptsFolderProjectItem, $fileNamePattern, $new
     $referencesTempFilePath = Join-Path $env:TEMP "_references.tmp.js"
 
     if ((Select-String $referencesFilePath -pattern $fileNamePattern).Length -eq 0) {
-        # File has no existing matching reference line
+        # File has no existing matching reference line, full example
         # Add the full reference line to the beginning of the file
         "/// <reference path=""$newFileName"" />" | Add-Content $referencesTempFilePath -Encoding UTF8
          Get-Content $referencesFilePath | Add-Content $referencesTempFilePath
