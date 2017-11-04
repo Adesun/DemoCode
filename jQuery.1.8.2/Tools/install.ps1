@@ -3,6 +3,7 @@ param($installPath, $toolsPath, $package, $project)
 . (Join-Path $toolsPath common.ps1)
 
 # VS 11 and above supports the new intellisense JS files
+# demo code
 $vsVersion = [System.Version]::Parse($dte.Version)
 $supportsJsIntelliSenseFile = $vsVersion.Major -ge 11
 
